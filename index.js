@@ -1,21 +1,16 @@
-console.log('testing')
-const button = document.querySelector('#button')
-const buttonTextBox = document.querySelector('#f')
+const form = document.querySelector('form')
 
-const content = function(){
-    const heading2 =document.querySelector('#daily')
-    heading2.textContent = 'spells learned today'
+const changeHeading = function(ev) {
+  ev.preventDefault()
 
-    const heading = document.querySelector('h1')
-    heading.textContent = 'Obsidian\'s spellbook'
+  const f = ev.target
+  const spellName = f.spellName.value
+  const spellLevel = f.spellLevel.value
+  const spellDamage = f.spellDamage.value
+  const spellsDiv = document.querySelector('#spells')
+  spellsDiv.innerHTML += `<li>${spellName + " level " + spellLevel + " "  + spellDamage }  </li>`
+
+  f.reset()
 }
 
-const content2 = function(){
-    const heading =document.querySelector("h1")
-    heading.textContent = head1.value
-   
-    const heading2 =document.querySelector("h2")
-    heading2.textContent = head2.value
-}
-button.addEventListener('click',content)
-buttonTextBox.addEventListener('click',content2)
+form.addEventListener('submit', changeHeading)

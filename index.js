@@ -7,9 +7,11 @@ const changeHeading = function(ev) {
   const spellName = f.spellName.value
   const spellLevel = f.spellLevel.value
   const spellDamage = f.spellDamage.value
-  const spellsDiv = document.querySelector('#spells')
-  spellsDiv.innerHTML += `<li>${spellName + " level " + spellLevel + " "  + spellDamage }  </li>`
 
+const list = document.createElement("LI")
+const text = document.createTextNode(spellName + " level " + spellLevel + " "  + spellDamage)
+  list.appendChild(text)     
+  document.querySelector("#spells").appendChild(list)
   f.reset()
 }
 

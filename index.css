@@ -72,7 +72,14 @@ input[type="text"]:focus {
   background-color: #fefefe;
   box-shadow: 0 0 5px #cacaca;
 }
-
+input[name=spellName]{
+    color: #cc1919;
+    font-family: UnifrakturCook, serif;
+}
+input[name=spellDamage]{
+    color: #2519cc;
+    font-family: UnifrakturCook, serif;
+}
 .buttonWrapper {
   padding-top: 0;
   padding-bottom: 0;

@@ -17,8 +17,5 @@ const content2 = function(){
     const heading2 =document.querySelector("h2")
     heading2.textContent = head2.value
 }
-
 button.addEventListener('click',content)
-
 buttonTextBox.addEventListener('click',content2)
-buttonTextBox.addEventListener('ctrlKey',content2)

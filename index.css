@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans%7CHomemade+Apple%7CUnifrakturCook:700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Homemade+Apple|UnifrakturCook:700');
 
 body {
-  background: url(wood.jpeg);
+  background: url(wood.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -37,7 +37,7 @@ h1 {
 form {
   margin-bottom: 1rem;
   margin-left: 10vw;
-  width: 60vw;
+  width: 50vw;
 }
 
 form > div {
@@ -46,8 +46,9 @@ form > div {
   align-items: stretch;
 }
 
-input[type="text"] {
-  flex: 1 1 0px;
+input[type="text"],
+input[type="number"] {
+  flex: 4 1 0;
   height: auto;
   min-width: 0;
   display: block;
@@ -66,20 +67,14 @@ input[type="text"] {
   appearance: none;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="number"]:focus {
   outline: 0;
   border: 1px solid #8a8a8a;
   background-color: #fefefe;
   box-shadow: 0 0 5px #cacaca;
 }
-input[name=spellName]{
-    color: #cc1919;
-    font-family: UnifrakturCook, serif;
-}
-input[name=spellDamage]{
-    color: #2519cc;
-    font-family: UnifrakturCook, serif;
-}
+
 .buttonWrapper {
   padding-top: 0;
   padding-bottom: 0;
@@ -116,7 +111,7 @@ button[type="submit"]:hover {
 
 main {
   box-sizing: border-box;
-  background-image: url(parchment.jpeg);
+  background-image: url(parchment.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 50vw;
@@ -138,4 +133,24 @@ ul#spells {
 .details {
   font-size: 0.7em;
   margin-top: -1rem;
+}
+
+input.small {
+  flex-grow: 1;
+}
+
+.spell {
+  display: flex;
+  justify-content: space-between;
+}
+
+.spell .name {
+  text-decoration: underline;
+  max-width: 80%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  padding-left: 0.1em;
+}
+.level {
+  color: cornflowerblue;
 }

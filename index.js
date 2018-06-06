@@ -1,8 +1,13 @@
+const spellArray = []
 const app = {
   init: function() {
     const form = document.querySelector('form')
+    
+
+
     form.addEventListener('submit', ev => {
       this.handleSubmit(ev)
+      
     })
   },
 
@@ -45,12 +50,14 @@ const app = {
     }
 
     const item = this.renderItem(spell)
-
+    spellArray.push(item)
     const list = document.querySelector('#spells')
-    list.appendChild(item)
 
+    list.appendChild(item)
     f.reset()
   },
 }
 
 app.init()
+
+

@@ -2,13 +2,19 @@ const spellArray = []
 const app = {
   init: function() {
     const form = document.querySelector('form')
-    
-
-
+    const button = document.querySelector('.delete')
+    button.addEventListener('click',ev => {
+      button.addEventListener('clicked', spellArray.splice(spellArray.indexOf(button.value),1,0))
+   
+      
+    })
     form.addEventListener('submit', ev => {
       this.handleSubmit(ev)
       
     })
+    
+ 
+
   },
 
   renderProperty: function(name, value) {
@@ -50,14 +56,22 @@ const app = {
     }
 
     const item = this.renderItem(spell)
-    spellArray.push(item)
+    spellArray.push(spell.name)
+
     const list = document.querySelector('#spells')
 
-    list.appendChild(item)
+    button = document.createElement("button")
+    button.appendChild(document.createTextNode(f.spellName.value + " delete"))
+    button.value= f.spellName.value
+    button.classList.add("delete")
+    list.appendChild(item) 
+    list.appendChild(button)
+   console.log(spellArray) 
     f.reset()
   },
+  
+  
 }
 
+
 app.init()
-
-

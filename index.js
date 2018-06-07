@@ -1,12 +1,20 @@
 const spellArray = []
+let buttons = document.querySelector(".delete")
 const app = {
   init: function() {
+     
     const form = document.querySelector('form')
-    const button = document.querySelector('.delete')
-    button.addEventListener('click',ev => {
-      button.addEventListener('clicked', spellArray.splice(spellArray.indexOf(button.value),1,0))
    
-      
+    buttons.addEventListener('click',ev => {
+     
+      //console.log(spellArray.indexOf(button.value))
+      var list = document.querySelector(".spell")
+     list.parentNode.removeChild(list)
+     
+      console.log(spellArray)
+      console.log(buttons.value)
+      buttons.addEventListener('clicked', spellArray.splice(spellArray.indexOf(buttons.value),1,0))
+      console.log(spellArray)
     })
     form.addEventListener('submit', ev => {
       this.handleSubmit(ev)
@@ -16,7 +24,8 @@ const app = {
  
 
   },
-
+//level - #
+//spellName - "fireball"
   renderProperty: function(name, value) {
     const el = document.createElement('span')
     el.textContent = value
@@ -33,10 +42,8 @@ const app = {
     const childElements = properties.map(property => {
       return this.renderProperty(property, spell[property])
     })
-
     const item = document.createElement('li')
     item.classList.add('spell')
-
     // append each <span> to the <li>
     childElements.forEach(el => {
       item.appendChild(el)
@@ -53,20 +60,27 @@ const app = {
     const spell = {
       name: f.spellName.value,
       level: f.level.value,
+
     }
 
     const item = this.renderItem(spell)
-    spellArray.push(spell.name)
+    
 
     const list = document.querySelector('#spells')
 
-    button = document.createElement("button")
+    const button = document.createElement("button")
+    button.classList.add("delete")
+    //button.type=node
     button.appendChild(document.createTextNode(f.spellName.value + " delete"))
     button.value= f.spellName.value
-    button.classList.add("delete")
+    buttons.value = button.value
+    spellArray.push(button.value)
+    
+    
     list.appendChild(item) 
     list.appendChild(button)
-   console.log(spellArray) 
+   //console.log(spellArray) 
+   console.log(spellArray.indexOf(button.value)) 
     f.reset()
   },
   

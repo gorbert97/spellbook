@@ -168,6 +168,7 @@ class App {
     const spell = {
       name: f.spellName.value,
       level: f.level.value,
+      damage: f.damage.value,
       favorite: false,
     }
 

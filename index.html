@@ -27,8 +27,13 @@
         name="level"
         placeholder="Level"
         class="small"
-        min="1"
-        max="20"
+        min="0"
+        max="9"
+      >
+      <input
+        type="text"
+        name="damage"
+        placeholder="dice damage"
       >
       <button type="submit">Add</button>
     </div>
@@ -43,6 +48,7 @@
   <li class="spell template">
     <span class="name"></span>
     <span class="level"></span>
+    <span class="damage"></span>
     <button class="delete">
         <i class="far fa-trash-alt" title="remove"></i>
     </button>

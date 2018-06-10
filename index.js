@@ -169,6 +169,7 @@ class App {
       name: f.spellName.value,
       level: f.level.value,
       damage: f.damage.value,
+      description: f.description.value,
       favorite: false,
     }
 
